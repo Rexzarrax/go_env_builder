@@ -24,7 +24,9 @@ md .\configs -ErrorAction Continue; Write-Host '.\configs alread exists'
 md .\docs -ErrorAction Continue; Write-Host '.\docs alread exists'
 
 go run '.\cmd\main.go'
+$project_name = Read-Host -Prompt "Enter your project name: "
 
-go mod init 
+
+go mod init $project_name
 
 go mod tidy
